@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechJobsMVCAutograded6", "TechJobsMVCAutograded6\TechJobsMVCAutograded6.csproj", "{A2A22C87-ED61-4A51-A9DF-5E5AED5B4CA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutogradingTests", "AutogradingTests\AutogradingTests.csproj", "{80693FFC-9394-4E43-9816-490E9A5823A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{47D40927-F9FB-4A0E-AC33-DAD7D541DA63}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2A22C87-ED61-4A51-A9DF-5E5AED5B4CA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2A22C87-ED61-4A51-A9DF-5E5AED5B4CA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2A22C87-ED61-4A51-A9DF-5E5AED5B4CA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2A22C87-ED61-4A51-A9DF-5E5AED5B4CA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80693FFC-9394-4E43-9816-490E9A5823A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80693FFC-9394-4E43-9816-490E9A5823A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80693FFC-9394-4E43-9816-490E9A5823A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80693FFC-9394-4E43-9816-490E9A5823A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC3C5AB4-87F0-4E1F-990F-ED379149B321}
+	EndGlobalSection
+EndGlobal
