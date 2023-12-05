@@ -37,7 +37,8 @@ public class ListController : Controller
         ViewBag.locations = JobData.GetAllLocations();
         ViewBag.positionTypes = JobData.GetAllPositionTypes();
         ViewBag.skills = JobData.GetAllCoreCompetencies();
-
+        //trying to fix the search by instantiating viewbag.jobs here.
+        ViewBag.jobs = JobData.FindAll();
         return View();
     }
 

@@ -30,7 +30,13 @@ public class SearchController : Controller
         //First, you need to create a local variable called “jobs” that is of type List<Job>.
         List<Job> jobs = new List<Job>();
         //If the user enters “all” in the search box, or if they leave the box empty, call the FindAll() method from JobData.
-        if (searchTerm.Equals("all") || searchTerm.Equals(""))
+        //notes from Jamey:
+        //    if the user doesn't type anything and searches by all you get a null reference error.
+        //    String.IsNullOrEmpty method may be useful here.  
+        //    Also on line 34 should you be checking searchTerm or searchType?
+        //    Also should this line be an "or" or "and"?
+
+        if (searchType.Equals("all") && string.IsNullOrEmpty(searchTerm))
         {
             jobs = JobData.FindAll();
         }
@@ -40,10 +46,12 @@ public class SearchController : Controller
             jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
         }
         //In either case, store the results in a jobs List.
-        ViewBag.jobs = jobs;
+        //ViewBag.jobs = jobs;
         //Pass ListController.ColumnChoices into the view, as the existing Index() action method does.
         ViewBag.Columns = ListController.ColumnChoices;
         //Pass jobs into the Index.cshtml view.
+        ViewBag.jobs = jobs;
+
         return View("Index");
 
     }

@@ -18,7 +18,14 @@
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+             @if (ViewBag.search == null)
+            {
+                <input type="text" name="searchTerm" id="searchTerm" />
+            }
+            else
+            {
+                <input type="text" name="searchTerm" id="searchTerm" value="@ViewBag.search" />
+            }
         </p>
 
         <input type="submit" value="Search" />
@@ -27,8 +34,9 @@
     <hr />
 
     @* TODO #4 - Loop over the search results to display all job fields. *@
-
-        @foreach (var job in ViewBag.jobs)
+    @if(ViewBag.jobs != null)
+    
+         @foreach (var job in ViewBag.jobs)
     {
         <table class="job-listing">
 
@@ -54,5 +62,4 @@
             </tr>
         </table>
     }
-
 </div>
