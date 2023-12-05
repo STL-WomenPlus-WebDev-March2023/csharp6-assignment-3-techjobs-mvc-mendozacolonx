@@ -33,12 +33,13 @@ public class ListController : Controller
     {
         ViewBag.columns = ColumnChoices;
         ViewBag.tableChoices = TableChoices;
+        //trying to fix the search by instantiating viewbag.jobs here.
+        ViewBag.jobs = JobData.FindAll();
         ViewBag.employers = JobData.GetAllEmployers();
         ViewBag.locations = JobData.GetAllLocations();
         ViewBag.positionTypes = JobData.GetAllPositionTypes();
         ViewBag.skills = JobData.GetAllCoreCompetencies();
-        //trying to fix the search by instantiating viewbag.jobs here.
-        ViewBag.jobs = JobData.FindAll();
+
         return View();
     }
 
@@ -49,19 +50,21 @@ public class ListController : Controller
         List<Job> jobs = new List<Job>();
         //If the user selects “View All”, you should use JobData.FindAll() to populate jobs with all the jobs
         //and update ViewBag.title.
-        if (column.Equals("all"))
+        if (column.ToLower() == "all")//(column.Equals("all"))
         {
             jobs = JobData.FindAll();
-
+            ViewBag.title = "All Jobs:";
         }
         //If the user selects something specific, you should use JobData.FindJobsByColumnAndValue() to populate jobs
         //with jobs that only match that criteria
         //and update ViewBag.title to include the criteria the user chose.
         else
         {
-            jobs = JobData.FindByColumnAndValue(column, value);
+            jobs = JobData.FindByColumnAndValue(column, value).ToList();
+            ViewBag.title = $"Jobs with {ColumnChoices[column]} : {value}";
+
         }
-        ViewBag.title = value;
+        //ViewBag.title = value;
         //Make sure to set ViewBag.jobs equal to jobs and run the program to see how it is working now!
         ViewBag.jobs = jobs;
         return View();
