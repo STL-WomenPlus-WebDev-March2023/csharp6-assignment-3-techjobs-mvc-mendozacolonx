@@ -36,7 +36,7 @@ public class SearchController : Controller
         //    Also on line 34 should you be checking searchTerm or searchType?
         //    Also should this line be an "or" or "and"?
 
-        if (searchType.Equals("all") && string.IsNullOrEmpty(searchTerm))
+        if (searchType.Equals("all") || string.IsNullOrEmpty(searchTerm))
         {
             jobs = JobData.FindAll();
         }
